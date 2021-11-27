@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Deployment Tutorial 1</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body style="background: rgb(252, 250, 250);">
+  <div class="login">
+   <a href="/">뒤로 돌아가기</a>
+   <h1>쇼미더머니~~</h1>
+   <h3>글과 분위기 알려주세요~.</h3>
+
+   <form action="/detail" method="post">
+      <br>
+      <div class="form-group">
+        <label for="formGroupExampleInput" colo>글을 적어주세요:  </label>
+        <input type="text" name="cheif" class="form-control" placeholder="글 적기" required="required">
+      </div>
+
+
+      <br>
+      <div class="form-group">
+        <label for="formGroupExampleInput" colo>글의 태그를 입력해주세요.:  </label>
+        <input type="text" name="tags" class="form-control" placeholder="힐링, 쉼, 휴식, 고요" required="required">
+      </div>
+      <br>
+
+      <br>
+      <button type="submit" class="btn btn-primary btn-block btn-large"> 주요 질병 예측하기</button>
+    </form>
+    <br>
+    <br>
+    <h2>
+      <div class="col-lg-6">
+
+        <p class="h5 text-center" style="font-family: 'Nanum Barun Gothic'"></p>
+            {% if first_mu %}
+          <h5 class="text-center">{{first_mu}}</h5>
+          <h5 class="text-center">{{second_mu}}</h5>
+            {% endif %}
+
+        <p class="h5 text-center" style="font-family: 'Nanum Barun Gothic'"></p>
+          {% if first_song %}
+          <h5 class="text-center">{{first_song}}</h5>
+          <h6 class="text-center">{{first_artist}}</h6>
+          <h6 class="text-center">{{first_tag}}</h6>
+          <h6 class="text-center">{{first_mood}}</h6>
+
+          <h5 class="text-center">{{second_song}}</h5>
+          <h6 class="text-center">{{second_artist}}</h6>
+          <h6 class="text-center">{{second_tag}}</h6>
+          <h6 class="text-center">{{second_mood}}</h6>
+
+          <h5 class="text-center">{{third_song}}</h5>
+          <h6 class="text-center">{{third_artist}}</h6>
+          <h6 class="text-center">{{third_tag}}</h6>
+          <h6 class="text-center">{{third_mood}}</h6>
+
+          <h5 class="text-center">{{fourth_song}}</h5>
+          <h6 class="text-center">{{fourth_artist}}</h6>
+          <h6 class="text-center">{{fourth_tag}}</h6>
+          <h6 class="text-center">{{fourth_mood}}</h6>
+
+          <h5 class="text-center">{{fifth_song}}</h5>
+          <h6 class="text-center">{{fifth_artist}}</h6>
+          <h6 class="text-center">{{fifth_tag}}</h6>
+          <h6 class="text-center">{{fifth_mood}}</h6>
+          {% endif %}
+
+      </div>
+    </h2>
+  </div>
+</body>
+</html>
